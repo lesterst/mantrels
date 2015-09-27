@@ -10,7 +10,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("MANTRELS - Appendicitis Calculator"),
+  titlePanel("MANTRELS - Appendicitis Calculator (not real data)"),
   
   sidebarLayout(
     
@@ -46,12 +46,22 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(width = 3,
-      h3("Percent Chance:"),
+      h3("Appendicitis Probability (%):"),
       h3(textOutput("mantrels")),
       hr(),
-      br(),
       h3("Suggested action:"),
-      h3(textOutput("action"))
+      h3(textOutput("action")),
+      br(),
+      br(),
+      br(),
+      h5(helpText("Instructions:")),
+      helpText("Place a check mark on the left"),
+      helpText("next to each of the symptoms"),
+      helpText("present in your patient."),
+      br(),
+      helpText("The tool will give the probability"),
+      helpText("of appendicitis, and give a"),
+      helpText("suggested action to take")
     )
   )
 ))
